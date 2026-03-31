@@ -1,10 +1,12 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { motion } from "framer-motion";
 import { Github, Linkedin, Twitter, ExternalLink, Sun, Moon } from "lucide-react";
 import { useTheme } from "@/contexts/ThemeContext";
+import RotatingText from "@/components/RotatingText";
 
 const navLinks = [
   { href: "/", label: "Home" },
@@ -48,19 +50,34 @@ export default function Sidebar() {
       <div className="mb-6">
         {/* Profile Image */}
         <div className="mb-4">
-          <div className="w-16 h-16 rounded-full bg-gradient-to-br from-gray-200 to-gray-300 dark:from-gray-700 dark:to-gray-800 flex items-center justify-center text-[#1a1a1a] dark:text-white font-bold text-xl border-2 border-gray-200 dark:border-gray-700 transition-colors duration-300">
-            NW
+          <div className="w-16 h-16 rounded-full overflow-hidden border-2 border-gray-200 dark:border-gray-700 transition-colors duration-300">
+            <Image
+              src="/8gXCURRZ_400x400.jpg"
+              alt="Nikhil"
+              width={64}
+              height={64}
+              className="w-full h-full object-cover"
+              priority
+            />
           </div>
         </div>
 
         {/* Name with typing cursor */}
         <div className="flex items-center gap-0 text-[16px] font-semibold text-[#1a1a1a] dark:text-white mb-1 transition-colors duration-300">
-          <span>Nikhil</span>
+          <span>Nikhil Wagh</span>
           <span className="cursor-blink ml-0.5">|</span>
         </div>
-        <p className="text-[13px] text-[#666] dark:text-gray-400 leading-relaxed transition-colors duration-300">
-          Problem Solver
-        </p>
+        <RotatingText
+          texts={[
+            "Problem Solver",
+            "Full Stack Developer",
+            "AI Engineer",
+            "Builder",
+            "Tech Enthusiast",
+          ]}
+          interval={2500}
+          className="text-[13px] text-[#666] dark:text-gray-400 transition-colors duration-300"
+        />
       </div>
 
       {/* Theme Toggle */}

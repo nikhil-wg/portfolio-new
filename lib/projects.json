@@ -1,0 +1,80 @@
+[
+  {
+    "slug": "ask-to-doc",
+    "title": "Ask to Doc",
+    "subtitle": "AI-Powered PDF Assistant",
+    "status": "active",
+    "description": "Built this because I was sick of Ctrl+F-ing through 50-page PDFs. Upload a document, ask it questions in plain English, get actual answers. Took about a month to build, mass amount of coffee, and one mass late nights.",
+    "video": "/askMyDoc demo video.mp4",
+    "image": null,
+    "tags": ["Next.js", "Convex", "LangChain", "Clerk", "PayPal", "AI", "SaaS"],
+    "liveUrl": "https://ask-to-doc.vercel.app/",
+    "githubUrl": "https://github.com/nikhil-wg/ask-to-doc",
+    "features": [
+      "Upload any PDF and chat with it naturally",
+      "Actually understands context, not just keyword matching",
+      "Syncs across devices (finally)",
+      "Free tier + Pro with PayPal subscriptions",
+      "Auth that just works (thanks Clerk)"
+    ],
+    "techHighlights": [
+      "Next.js 14 - because I like fast sites",
+      "Convex for real-time stuff without the headache",
+      "LangChain doing the AI heavy lifting",
+      "Clerk saved me weeks on auth",
+      "PayPal for payments (international users love it)"
+    ],
+    "cardDescription": "Got tired of Ctrl+F through long PDFs. So I built an AI that actually reads and answers questions from your documents."
+  },
+  {
+    "slug": "ai-trip-planner",
+    "title": "AI Trip Planner",
+    "subtitle": "Smart Travel Assistant",
+    "status": "active",
+    "description": "Planning trips was eating up my weekends. This app takes your destination and builds a full itinerary—hotels, places to visit, restaurants. Not perfect yet, but it works better than spending hours on Google.",
+    "video": null,
+    "image": null,
+    "tags": ["React", "Node.js", "Firebase", "Google Auth", "Google Places API", "AI"],
+    "liveUrl": "https://ai-trip-planner-nikhil.vercel.app/",
+    "githubUrl": null,
+    "features": [
+      "Tell it where you're going, get a full itinerary",
+      "Real places from Google Places API (not made up stuff)",
+      "Google login so you don't need another password",
+      "Save trips and share with friends",
+      "Works on mobile (mostly)"
+    ],
+    "techHighlights": [
+      "React frontend - nothing fancy, just works",
+      "Firebase because I didn't want to manage servers",
+      "Google Places API for actual venue data",
+      "Could use some polish but ships working"
+    ],
+    "cardDescription": "Planning trips took forever. Built this to generate full itineraries with real hotel and restaurant suggestions. Still improving it."
+  },
+  {
+    "slug": "nasa-bioscience-engine",
+    "title": "NASA Bioscience Knowledge Engine",
+    "subtitle": "AI-Powered Research Search",
+    "status": "active",
+    "description": "A hackathon project that turned into something real. Ask questions about NASA's bioscience research in plain English, get answers with actual citations. Nerdy? Yes. Cool? Also yes.",
+    "video": null,
+    "image": null,
+    "tags": ["Next.js", "Convex", "Google Gemini", "LangChain", "Vector Search", "AI"],
+    "liveUrl": null,
+    "githubUrl": null,
+    "features": [
+      "Search NASA research without reading 100 papers",
+      "AI answers with cited sources (not hallucinations)",
+      "Semantic search - actually understands what you mean",
+      "Built for researchers but anyone can use it"
+    ],
+    "techHighlights": [
+      "Gemini 2.0 Flash - fast and smart enough",
+      "LangChain RAG pipeline for accurate retrieval",
+      "Vector embeddings for semantic matching",
+      "Still adding more papers to the database"
+    ],
+    "cardDescription": "Hackathon project that grew up. Search NASA bioscience research with plain English questions. Gets you answers with real citations."
+  }
+]

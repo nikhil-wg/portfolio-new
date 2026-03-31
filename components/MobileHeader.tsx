@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
@@ -50,8 +51,15 @@ export default function MobileHeader() {
     >
       {/* Logo */}
       <Link href="/" className="flex items-center gap-2">
-        <div className="w-8 h-8 rounded-full bg-gradient-to-br from-gray-200 to-gray-300 dark:from-gray-700 dark:to-gray-800 flex items-center justify-center text-[#1a1a1a] dark:text-white font-bold text-xs transition-colors duration-300">
-          NW
+        <div className="w-8 h-8 rounded-full overflow-hidden border border-gray-200 dark:border-gray-700 transition-colors duration-300">
+          <Image
+            src="/8gXCURRZ_400x400.jpg"
+            alt="Nikhil"
+            width={32}
+            height={32}
+            className="w-full h-full object-cover"
+            priority
+          />
         </div>
         <span className="text-[15px] font-semibold text-[#1a1a1a] dark:text-white flex items-center transition-colors duration-300">
           Nikhil<span className="cursor-blink ml-0.5">|</span>

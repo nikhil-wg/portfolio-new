@@ -6,6 +6,11 @@ export const metadata: Metadata = {
   title: "Nikhil Wagh — Full Stack Developer & AI Enthusiast",
   description:
     "Full-Stack Developer skilled in MERN stack, Next.js, and AI applications. Building scalable and intelligent systems.",
+  icons: {
+    icon: "/8gXCURRZ_400x400.jpg",
+    shortcut: "/8gXCURRZ_400x400.jpg",
+    apple: "/8gXCURRZ_400x400.jpg",
+  },
 };
 
 export default function RootLayout({
