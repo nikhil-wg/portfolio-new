@@ -1,62 +1,22 @@
-import BlogList, { HashnodePost } from "@/components/BlogList";
+import { supabase } from "@/lib/supabase";
+import BlogList from "@/components/BlogList";
 
 // Using Server Component for data fetching
-export const revalidate = 3600; // Revalidate every hour since it's a blog
+export const revalidate = 60; // Revalidate every 60 seconds
 
-async function getBlogs(): Promise<HashnodePost[]> {
-  const query = `
-    query Publication {
-      publication(host: "nikhilwagh.hashnode.dev") {
-        posts(first: 10) {
-          edges {
-            node {
-              title
-              brief
-              slug
-              publishedAt
-              readTimeInMinutes
-              coverImage {
-                url
-              }
-              tags {
-                name
-              }
-            }
-          }
-        }
-      }
-    }
-  `;
+async function getBlogs() {
+  const { data, error } = await supabase
+    .from("blogs")
+    .select("*")
+    .eq("published", true)
+    .order("created_at", { ascending: false });
 
-  try {
-    const res = await fetch("https://gql.hashnode.com", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-        "Accept": "application/json",
-      },
-      body: JSON.stringify({ query }),
-      next: { revalidate: 3600 }
-    });
-
-    if (!res.ok) {
-      console.error(`HTTP error! status: ${res.status}`);
-      return [];
-    }
-
-    const text = await res.text();
-    try {
-      const { data } = JSON.parse(text);
-      return data?.publication?.posts?.edges?.map((edge: any) => edge.node) || [];
-    } catch (parseError) {
-      console.error("Error parsing Hashnode JSON response:", parseError);
-      console.error("Raw response:", text.substring(0, 200));
-      return [];
-    }
-  } catch (error) {
-    console.error("Error fetching Hashnode blogs:", error);
+  if (error) {
+    console.error("Error fetching blogs:", error);
     return [];
   }
+
+  return data || [];
 }
 
 export default async function BlogsPage() {
