@@ -70,26 +70,26 @@ export default function HomePage() {
         >
           <p>
             <strong className="text-[#1a1a1a] dark:text-white font-semibold transition-colors duration-300">I turn ideas into products.</strong>{" "}
-            Not just code that works—but systems that are fast, intelligent, and solve real problems.
+            Not just code that works but systems that are fast, intelligent, and solve real problems.
           </p>
 
           <p>
             As a{" "}
             <strong className="text-[#1a1a1a] dark:text-white font-semibold transition-colors duration-300">Full Stack Developer</strong> and{" "}
             <strong className="text-[#1a1a1a] dark:text-white font-semibold transition-colors duration-300">AI Engineer</strong>,
-            I live at the intersection where web meets intelligence. MERN, Next.js, AI—that&apos;s my playground.
+            I live at the intersection where web meets intelligence. MERN, Next.js, AI that&apos;s my playground.
           </p>
 
           <p>
             Right now, I&apos;m deep into building{" "}
             <strong className="text-[#1a1a1a] dark:text-white font-semibold transition-colors duration-300">AI-powered tools</strong>{" "}
-            that make life easier—think semantic search engines that actually understand context,
+            that make life easier think semantic search engines that actually understand context,
             trip planners that learn your preferences, and SaaS apps that automate the boring stuff.
           </p>
 
           <p>
             My current obsession? Making AI accessible. I believe the best AI products are the ones
-            you don&apos;t even notice—they just work, seamlessly integrated into your workflow.
+            you don&apos;t even notice they just work, seamlessly integrated into your workflow.
           </p>
 
           <p>
@@ -100,7 +100,7 @@ export default function HomePage() {
             >
               projects
             </Link>
-            —each one started as a "what if" and turned into something real.
+             {" "} each one started as a "what if" and turned into something real.
           </p>
         </motion.div>
       </div>
@@ -121,8 +121,8 @@ export default function HomePage() {
           <CurrentlyWorkingOn
             items={[
               {
-                title: "Ask to Doc v2",
-                description: "Adding multi-document chat and better AI context handling",
+                title: "Building a Chat System that can handle 100 M Rows of Data",
+                description: "Using BigQuery conversion agents to create a scalable and efficient chat system",
                 status: "building",
               },
               {
@@ -152,13 +152,13 @@ export default function HomePage() {
           <h3 className="text-[13px] uppercase tracking-wider text-[#999] dark:text-gray-500 font-semibold mb-4 transition-colors duration-300">
             Featured Blog
           </h3>
-          <BlogCard
+          {/* <BlogCard
             title="The Long Flight Test"
             description="A deep dive into testing strategies for long-running processes and how to ensure reliability in complex AI systems."
             image="https://images.unsplash.com/photo-1436491865332-7a61a109cc05?w=800&q=80"
             href="/blogs/the-long-flight-test"
             label="Latest Post"
-          />
+          /> */}
         </div>
       </motion.div>
     </div>

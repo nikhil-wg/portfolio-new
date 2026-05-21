@@ -2,10 +2,22 @@
 
 import { motion } from "framer-motion";
 import BlogCard from "./BlogCard";
-import { Blog } from "@/lib/supabase";
+export interface HashnodePost {
+  title: string;
+  brief: string;
+  slug: string;
+  publishedAt: string;
+  readTimeInMinutes: number;
+  coverImage?: {
+    url: string;
+  } | null;
+  tags?: {
+    name: string;
+  }[];
+}
 
 interface BlogListProps {
-  blogs: Blog[];
+  blogs: HashnodePost[];
 }
 
 const fadeUp = {
@@ -35,7 +47,7 @@ export default function BlogList({ blogs }: BlogListProps) {
     <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
       {blogs.map((blog, index) => {
         // Format date
-        const date = new Date(blog.created_at).toLocaleDateString("en-US", {
+        const date = new Date(blog.publishedAt).toLocaleDateString("en-US", {
           year: "numeric",
           month: "short",
           day: "numeric",
@@ -43,18 +55,20 @@ export default function BlogList({ blogs }: BlogListProps) {
 
         return (
           <motion.div
-            key={blog.id}
+            key={blog.slug}
             custom={index}
             variants={fadeUp}
             initial="hidden"
             animate="visible"
+            className="flex"
           >
             <BlogCard
               title={blog.title}
-              description={blog.excerpt}
-              image={blog.cover_image}
-              href={`/blogs/${blog.slug}`}
-              label="Blog Post"
+              description={blog.brief}
+              image={blog.coverImage?.url}
+              href={`https://nikhilwagh.hashnode.dev/${blog.slug}`}
+              readTime={blog.readTimeInMinutes}
+              tags={blog.tags}
               date={date}
             />
           </motion.div>
