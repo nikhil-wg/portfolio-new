@@ -1,32 +1,12 @@
-import { supabase, Blog } from "@/lib/supabase";
+import { getBlogs, getBlog, Blog } from "@/lib/blogs";
 import BlogContent from "@/components/BlogContent";
 import { notFound } from "next/navigation";
 
 // Generate static params for all blogs
 export async function generateStaticParams() {
-  const { data: blogs } = await supabase
-    .from("blogs")
-    .select("slug")
-    .eq("published", true);
+  const blogs = await getBlogs();
 
   return blogs?.map((blog) => ({ slug: blog.slug })) || [];
-}
-
-// Fetch blog by slug
-async function getBlog(slug: string): Promise<Blog | null> {
-  const { data, error } = await supabase
-    .from("blogs")
-    .select("*")
-    .eq("slug", slug)
-    .eq("published", true)
-    .single();
-
-  if (error) {
-    console.error("Error fetching blog:", error);
-    return null;
-  }
-
-  return data;
 }
 
 // Generate metadata for SEO
@@ -45,10 +25,10 @@ export async function generateMetadata({
 
   return {
     title: `${blog.title} — Nikhil Wagh`,
-    description: blog.excerpt,
+    description: blog.description,
     openGraph: {
       title: blog.title,
-      description: blog.excerpt,
+      description: blog.description,
       images: blog.cover_image ? [blog.cover_image] : [],
     },
   };

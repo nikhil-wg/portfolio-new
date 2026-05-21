@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 import { Calendar, ArrowLeft } from "lucide-react";
 import Link from "next/link";
 import Image from "next/image";
-import { Blog } from "@/lib/supabase";
+import { Blog } from "@/lib/blogs";
 
 interface BlogContentProps {
   blog: Blog;
@@ -79,7 +79,7 @@ export default function BlogContent({ blog }: BlogContentProps) {
           {blog.title}
         </motion.h1>
 
-        {blog.excerpt && (
+        {blog.description && (
           <motion.p
             custom={4}
             variants={fadeUp}
@@ -87,7 +87,7 @@ export default function BlogContent({ blog }: BlogContentProps) {
             animate="visible"
             className="text-[18px] text-[#666] dark:text-gray-400 leading-relaxed transition-colors duration-300"
           >
-            {blog.excerpt}
+            {blog.description}
           </motion.p>
         )}
       </div>

@@ -1,23 +1,8 @@
-import { supabase } from "@/lib/supabase";
+import { getBlogs } from "@/lib/blogs";
 import BlogList from "@/components/BlogList";
 
 // Using Server Component for data fetching
 export const revalidate = 60; // Revalidate every 60 seconds
-
-async function getBlogs() {
-  const { data, error } = await supabase
-    .from("blogs")
-    .select("*")
-    .eq("published", true)
-    .order("created_at", { ascending: false });
-
-  if (error) {
-    console.error("Error fetching blogs:", error);
-    return [];
-  }
-
-  return data || [];
-}
 
 export default async function BlogsPage() {
   const blogs = await getBlogs();

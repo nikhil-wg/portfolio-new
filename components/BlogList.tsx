@@ -2,7 +2,7 @@
 
 import { motion } from "framer-motion";
 import BlogCard from "./BlogCard";
-import { Blog } from "@/lib/supabase";
+import { Blog } from "@/lib/blogs";
 
 interface BlogListProps {
   blogs: Blog[];
@@ -51,7 +51,7 @@ export default function BlogList({ blogs }: BlogListProps) {
           >
             <BlogCard
               title={blog.title}
-              description={blog.excerpt}
+              description={blog.description}
               image={blog.cover_image}
               href={`/blogs/${blog.slug}`}
               label="Blog Post"
