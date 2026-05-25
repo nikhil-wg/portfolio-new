@@ -21,88 +21,94 @@ export default function HomePage() {
   return (
     <div className="space-y-8">
       {/* Hero */}
-      <div>
-        <motion.h1
-          custom={0}
-          variants={fadeUp}
-          initial="hidden"
-          animate="visible"
-          className="text-[40px] sm:text-[48px] font-bold text-[#1a1a1a] dark:text-white tracking-tight leading-tight mb-3 transition-colors duration-300"
-        >
-          Hey, I&apos;m Nikhil 👋
-        </motion.h1>
+      <div className="relative overflow-hidden">
+        <div className="absolute inset-0 z-0 pointer-events-none">
+          <div className="absolute left-1/2 top-6 h-[320px] w-[320px] -translate-x-1/2 rounded-full bg-[radial-gradient(circle,rgba(99,102,241,0.25),rgba(0,0,0,0))] blur-3xl dark:bg-[radial-gradient(circle,rgba(59,130,246,0.22),rgba(0,0,0,0))]" />
+        </div>
 
-        <motion.h2
-          custom={1}
-          variants={fadeUp}
-          initial="hidden"
-          animate="visible"
-          className="text-[18px] text-[#666] dark:text-gray-400 font-normal mb-8 transition-colors duration-300"
-        >
-          <TypingEffect 
-            text="Full Stack Developer & AI Engineer crafting intelligent web experiences."
-            speed={35}
-            delay={400}
-          />
-        </motion.h2>
+        <div className="relative z-10">
+          <motion.h1
+            custom={0}
+            variants={fadeUp}
+            initial="hidden"
+            animate="visible"
+            className="text-[40px] sm:text-[48px] font-bold text-[#1a1a1a] dark:text-white tracking-tight leading-tight mb-3 transition-colors duration-300"
+          >
+            Hey, I&apos;m Nikhil 👋
+          </motion.h1>
 
-        {/* X Follow Card */}
-        <motion.div
-          custom={2}
-          variants={fadeUp}
-          initial="hidden"
-          animate="visible"
-          className="mb-8"
-        >
-          <XFollowCard
-            username="@nikhil_twt"
-            description="Building in public. AI insights, dev updates, and occasional hot takes."
-          />
-        </motion.div>
+          <motion.h2
+            custom={1}
+            variants={fadeUp}
+            initial="hidden"
+            animate="visible"
+            className="text-[18px] text-[#666] dark:text-gray-400 font-normal mb-8 transition-colors duration-300"
+          >
+            <TypingEffect 
+              text="Full Stack Developer & AI Engineer crafting intelligent web experiences."
+              speed={35}
+              delay={400}
+            />
+          </motion.h2>
 
-        {/* Intro paragraphs */}
-        <motion.div
-          custom={3}
-          variants={fadeUp}
-          initial="hidden"
-          animate="visible"
-          className="flex flex-col gap-5 text-[15px] text-[#555] dark:text-gray-400 leading-[1.8] transition-colors duration-300"
-        >
-          <p>
-            <strong className="text-[#1a1a1a] dark:text-white font-semibold transition-colors duration-300">I turn ideas into products.</strong>{" "}
-            Not just code that works but systems that are fast, intelligent, and solve real problems.
-          </p>
+          {/* X Follow Card */}
+          <motion.div
+            custom={2}
+            variants={fadeUp}
+            initial="hidden"
+            animate="visible"
+            className="mb-8"
+          >
+            <XFollowCard
+              username="@nikhil_twt"
+              description="Building in public. AI insights, dev updates, and occasional hot takes."
+            />
+          </motion.div>
 
-          <p>
-            As a{" "}
-            <strong className="text-[#1a1a1a] dark:text-white font-semibold transition-colors duration-300">Full Stack Developer</strong> and{" "}
-            <strong className="text-[#1a1a1a] dark:text-white font-semibold transition-colors duration-300">AI Engineer</strong>,
-            I live at the intersection where web meets intelligence. MERN, Next.js, AI that&apos;s my playground.
-          </p>
+          {/* Intro paragraphs */}
+          <motion.div
+            custom={3}
+            variants={fadeUp}
+            initial="hidden"
+            animate="visible"
+            className="flex flex-col gap-5 text-[15px] text-[#555] dark:text-gray-400 leading-[1.8] transition-colors duration-300"
+          >
+            <p>
+              <strong className="text-[#1a1a1a] dark:text-white font-semibold transition-colors duration-300">I turn ideas into products.</strong>{" "}
+              Not just code that works but systems that are fast, intelligent, and solve real problems.
+            </p>
 
-          <p>
-            Right now, I&apos;m deep into building{" "}
-            <strong className="text-[#1a1a1a] dark:text-white font-semibold transition-colors duration-300">AI-powered tools</strong>{" "}
-            that make life easier think semantic search engines that actually understand context,
-            trip planners that learn your preferences, and SaaS apps that automate the boring stuff.
-          </p>
+            <p>
+              As a{" "}
+              <strong className="text-[#1a1a1a] dark:text-white font-semibold transition-colors duration-300">Full Stack Developer</strong> and{" "}
+              <strong className="text-[#1a1a1a] dark:text-white font-semibold transition-colors duration-300">AI Engineer</strong>,
+              I live at the intersection where web meets intelligence. MERN, Next.js, AI that&apos;s my playground.
+            </p>
 
-          <p>
-            My current obsession? Making AI accessible. I believe the best AI products are the ones
-            you don&apos;t even notice they just work, seamlessly integrated into your workflow.
-          </p>
+            <p>
+              Right now, I&apos;m deep into building{" "}
+              <strong className="text-[#1a1a1a] dark:text-white font-semibold transition-colors duration-300">AI-powered tools</strong>{" "}
+              that make life easier think semantic search engines that actually understand context,
+              trip planners that learn your preferences, and SaaS apps that automate the boring stuff.
+            </p>
 
-          <p>
-            Curious what I&apos;ve built? Dive into my{" "}
-            <Link
-              href="/projects"
-              className="text-[#1a1a1a] dark:text-white font-medium underline underline-offset-2 decoration-[#ccc] dark:decoration-gray-600 hover:decoration-[#1a1a1a] dark:hover:decoration-white transition-colors"
-            >
-              projects
-            </Link>
-             {" "} each one started as a "what if" and turned into something real.
-          </p>
-        </motion.div>
+            <p>
+              My current obsession? Making AI accessible. I believe the best AI products are the ones
+              you don&apos;t even notice they just work, seamlessly integrated into your workflow.
+            </p>
+
+            <p>
+              Curious what I&apos;ve built? Dive into my{" "}
+              <Link
+                href="/projects"
+                className="text-[#1a1a1a] dark:text-white font-medium underline underline-offset-2 decoration-[#ccc] dark:decoration-gray-600 hover:decoration-[#1a1a1a] dark:hover:decoration-white transition-colors"
+              >
+                projects
+              </Link>
+               {" "} each one started as a "what if" and turned into something real.
+            </p>
+          </motion.div>
+        </div>
       </div>
 
       {/* Divider */}

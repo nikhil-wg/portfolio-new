@@ -4,6 +4,7 @@ import { ThemeProvider } from "@/contexts/ThemeContext";
 import Sidebar from "@/components/Sidebar";
 import MobileHeader from "@/components/MobileHeader";
 import Footer from "@/components/Footer";
+import { StarsBackground } from "@/components/ui/stars";
 
 export default function ClientLayout({
   children,
@@ -23,19 +24,19 @@ export default function ClientLayout({
       </div>
 
       {/* Main content wrapper with footer */}
-      <div className="min-h-screen flex flex-col pt-14 lg:pt-0 lg:ml-[220px]">
+      <StarsBackground className="relative flex flex-col min-h-screen pt-14 lg:pt-0 lg:ml-[220px]">
         {/* Main content - grows to fill space */}
-        <main className="flex-grow">
+        <main className="relative z-10 flex-grow">
           <div className="max-w-3xl mx-auto px-6 lg:px-10 py-10 lg:py-12">
             {children}
           </div>
         </main>
 
         {/* Footer - stays at bottom */}
-        <div className="max-w-3xl mx-auto px-6 lg:px-10 w-full">
+        <div className="relative z-10 max-w-3xl mx-auto px-6 lg:px-10 w-full">
           <Footer />
         </div>
-      </div>
+      </StarsBackground>
     </ThemeProvider>
   );
 }
